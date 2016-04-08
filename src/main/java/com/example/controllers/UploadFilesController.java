@@ -27,23 +27,23 @@ public class UploadFilesController {
     public ResponseEntity<?> uploadFile(
             @RequestParam("file") MultipartFile uploadfile) {
 
-//        try {
-//            // Get the filename and build the local file path (be sure that the
-//            // application have write permissions on such directory)
-//            String filename = uploadfile.getOriginalFilename();
-//            String directory = "/var/netgloo_blog/uploaded_files";
-//            String filepath = Paths.get(directory, filename).toString();
-//
-//            // Save the file locally
-//            BufferedOutputStream stream =
-//                    new BufferedOutputStream(new FileOutputStream(new File(filepath)));
-//            stream.write(uploadfile.getBytes());
-//            stream.close();
-//        }
-//        catch (Exception e) {
-//            System.out.println(e.getMessage());
-//            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
-//        }
+        try {
+            // Get the filename and build the local file path (be sure that the
+            // application have write permissions on such directory)
+            String filename = uploadfile.getOriginalFilename();
+            String directory = "/tmp/";
+            String filepath = Paths.get(directory, filename).toString();
+
+            // Save the file locally
+            BufferedOutputStream stream =
+                    new BufferedOutputStream(new FileOutputStream(new File(filepath)));
+            stream.write(uploadfile.getBytes());
+            stream.close();
+        }
+        catch (Exception e) {
+            System.out.println(e.getMessage());
+            return new ResponseEntity<>(HttpStatus.BAD_REQUEST);
+        }
 
         return new ResponseEntity<>(HttpStatus.OK);
     } // method uploadFile
