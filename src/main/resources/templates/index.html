@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html ng-app="UpLoad" xmlns="http://www.w3.org/1999/xhtml">
+<html ng-app="myApp" xmlns="http://www.w3.org/1999/xhtml">
 <script src="/js/angular.js"></script>
 <script src="/js/UploadController.js"></script>
 <head>
@@ -8,15 +8,13 @@
     <meta charset="UTF-8"/>
     <title>SpringUploadFile</title>
 </head>
-<body ng-controller="UpLoadController as c">
+<body>
 Spring Done
 
 <!--<form ng-submit="c.addFile()">-->
-    <form ng-submit="c.addFile()">
-
-    <label for="upload-file-input">Upload your file:</label>
-    <input id="upload-file-input" type="file" file-model="myFile"/>
-    <input type="submit" value="UpLoad"/>
-</form>
+<div ng-controller = "myCtrl">
+    <input type="file" file-model="myFile"/>
+    <button ng-click="uploadFile()">upload me</button>
+</div>
 </body>
 </html>
