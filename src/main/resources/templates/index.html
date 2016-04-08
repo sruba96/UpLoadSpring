@@ -1,14 +1,22 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml"
->
-
+<html ng-app="UpLoad" xmlns="http://www.w3.org/1999/xhtml">
+<script src="/js/angular.js"></script>
+<script src="/js/UploadController.js"></script>
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta charset="UTF-8"/>
-    <title>SpringBoot</title>
+    <title>SpringUploadFile</title>
 </head>
-<body>
-Spring done
+<body ng-controller="UpLoadController as c">
+Spring Done
+
+<!--<form ng-submit="c.addFile()">-->
+    <form ng-submit="c.addFile()">
+
+    <label for="upload-file-input">Upload your file:</label>
+    <input id="upload-file-input" type="file" file-model="myFile"/>
+    <input type="submit" value="UpLoad"/>
+</form>
 </body>
 </html>
