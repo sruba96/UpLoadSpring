@@ -24,7 +24,7 @@ example.controller('UpLoadController', function ($scope, $http) // serwis $http 
         });
     };
 
-
+    //Malina
     example.directive('fileModel', ['$parse', function ($parse) {
     return {
         restrict: 'A',
